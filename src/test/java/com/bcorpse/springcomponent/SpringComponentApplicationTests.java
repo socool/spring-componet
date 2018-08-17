@@ -53,4 +53,13 @@ public class SpringComponentApplicationTests {
 		assertTrue("Contains B2",context.containsBean("demoBeanB2"));
 		assertTrue("Contains B3",context.containsBean("demoBeanB3"));
 	}
+
+	@Test
+	public void testIncludeFilterTypeRegex(){
+		ApplicationContext context = SpringApplication.
+				run(SpringComponentApplicationFilterTypeRegex.class,new String[] {});
+		assertTrue("Contains A",context.containsBean("demoBeanA"));
+		assertFalse("Contains B1",context.containsBean("demoBeanB1"));
+		assertTrue("Contains B2",context.containsBean("demoBeanB2"));
+	}
 }
