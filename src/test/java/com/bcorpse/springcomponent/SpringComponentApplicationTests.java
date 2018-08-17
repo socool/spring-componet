@@ -23,19 +23,19 @@ public class SpringComponentApplicationTests {
 
 	@Test
 	public void testFindBeanShouldReturnBean(){
-		assertTrue("Should be find demoBeanA!",context.containsBeanDefinition("demoBeanA"));
-		assertTrue("Should be find demoBeanB2!",context.containsBeanDefinition("demoBeanB2"));
-		assertTrue("Should be find demoBeanC!",context.containsBeanDefinition("demoBeanC"));
+		assertTrue("Contains A",context.containsBeanDefinition("demoBeanA"));
+		assertTrue("Contains B2",context.containsBeanDefinition("demoBeanB2"));
+		assertTrue("Contains C",context.containsBeanDefinition("demoBeanC"));
 	}
 
 	@Test
 	public void testFindMissingPackageShouldReturnBean(){
 		ApplicationContext context = SpringApplication.run(SpringComponentApplicationWithComponentScan.class, new String[]{});
 		System.out.println(context.containsBeanDefinition("demoBeanC"));
-		assertTrue("Should be Contains A",context.containsBeanDefinition("demoBeanA"));
-		assertTrue("Should be Contains B2",context.containsBeanDefinition("demoBeanB2"));
-		assertFalse("Should be Contains C",context.containsBeanDefinition("demoBeanC"));
-		assertTrue("Should be Contains D",context.containsBeanDefinition("demoBeanD"));
+		assertTrue("Contains A",context.containsBeanDefinition("demoBeanA"));
+		assertTrue("Contains B2",context.containsBeanDefinition("demoBeanB2"));
+		assertFalse("Contains C",context.containsBeanDefinition("demoBeanC"));
+		assertTrue("Contains D",context.containsBeanDefinition("demoBeanD"));
 	}
 
 	@Test
@@ -44,4 +44,13 @@ public class SpringComponentApplicationTests {
 		assertFalse(context.containsBean("demoBeanA"));
 	}
 
+	@Test
+	public void testIncludeFilter(){
+		ApplicationContext context = SpringApplication.
+				run(SpringComponentApplicationIncludeFilter.class,new String[] {});
+		assertFalse("Contains A",context.containsBean("demoBeanA"));
+		assertFalse("Contains B1",context.containsBean("demoBeanB1"));
+		assertTrue("Contains B2",context.containsBean("demoBeanB2"));
+		assertTrue("Contains B3",context.containsBean("demoBeanB3"));
+	}
 }
