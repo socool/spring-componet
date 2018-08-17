@@ -1,4 +1,4 @@
-package com.bcorpse.example;
+package com.bcorpse.example.packageA;
 
 import org.springframework.stereotype.Component;
 
