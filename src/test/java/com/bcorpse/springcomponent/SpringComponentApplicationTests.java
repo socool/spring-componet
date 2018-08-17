@@ -38,4 +38,10 @@ public class SpringComponentApplicationTests {
 		assertTrue("Should be Contains D",context.containsBeanDefinition("demoBeanD"));
 	}
 
+	@Test
+	public void testDisableDefaultFiltersShouldnNotGetBean(){
+		ApplicationContext context = SpringApplication.run(SpringComponentApplicationDisablingDefaultFilters.class, new String[]{});
+		assertFalse(context.containsBean("demoBeanA"));
+	}
+
 }

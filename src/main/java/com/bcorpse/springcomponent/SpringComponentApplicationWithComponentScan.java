@@ -20,8 +20,6 @@ public class SpringComponentApplicationWithComponentScan {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.
 				run(SpringComponentApplicationWithComponentScan.class, args);
-		ApplicationContext contextx = SpringApplication.
-				run(SpringComponentApplicationWithComponentScan.class, args);
 		System.out.println("Contains A  " + context.containsBeanDefinition("demoBeanA"));
 		System.out.println("Contains B2  " + context.containsBeanDefinition("demoBeanB2"));
 		System.out.println("Contains C   " + context.containsBeanDefinition("demoBeanC"));
