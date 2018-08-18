@@ -18,6 +18,13 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<repositories>
+		<repository>
+			<id>veteran.cg.gy.mojito.library</id>
+			<url>https://veteran.cg.gy/mojito/library/raw/maven/</url>
+		</repository>
+	</repositories>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -35,6 +42,24 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mojito.core</groupId>
+			<artifactId>mojito-lib</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

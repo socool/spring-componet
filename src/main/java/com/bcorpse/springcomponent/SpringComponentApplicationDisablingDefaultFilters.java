@@ -1,11 +1,12 @@
 package com.bcorpse.springcomponent;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@EnableAutoConfiguration
 @ComponentScan(value = "com.bcorpse.example.packageA",
         useDefaultFilters = false)
 public class SpringComponentApplicationDisablingDefaultFilters {
